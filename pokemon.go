@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
-func main() {
-	fmt.Printf("Hello, world.\n")
+func getName(id int, lang string) string{
+	return "foo"
 }
