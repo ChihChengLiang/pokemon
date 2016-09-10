@@ -2,6 +2,7 @@ language: go
 
 go:
     - 1.6
-
+env:
+    - TRAVIS_BUILD_DIR=/home/travis/pokemon
 script:
     - go test
