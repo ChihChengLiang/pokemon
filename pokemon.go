@@ -8,7 +8,7 @@ import (
 )
 
 
-func getName(id int, lang string) string{
+func PokemonName(id int, lang string) string{
 	file, e := ioutil.ReadFile("./data/" + lang + ".json")
 	if e != nil {
         fmt.Printf("File error: %v\n", e)
@@ -20,7 +20,7 @@ func getName(id int, lang string) string{
 	return pokemons[id - 1]
 }
 
-func getId(name string, lang string) int{
+func PokemonId(name string, lang string) int{
 	file, e := ioutil.ReadFile("./data/" + lang + ".json")
 	if e != nil {
         fmt.Printf("File error: %v\n", e)

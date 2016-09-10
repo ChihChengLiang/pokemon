@@ -15,7 +15,7 @@ func TestNames(t *testing.T) {
 		{721, "zh-Hant", "波爾凱尼恩"},
 	}
 	for _, c := range cases {
-		got := getName(c.id, c.lang)
+		got := PokemonName(c.id, c.lang)
 		if got != c.expectedName {
 			t.Errorf("getName(%v, %q) == %q, expectedName: %q", c.id, c.lang, got, c.expectedName)
 		}
@@ -35,7 +35,7 @@ func TestIds(t *testing.T) {
 		{721, "zh-Hant", "波爾凱尼恩"},
 	}
 	for _, c := range cases {
-		got := getId(c.name, c.lang)
+		got := PokemonId(c.name, c.lang)
 		if got != c.expectedId {
 			t.Errorf("getId(%q, %q) == %v, expectedId: %v", c.name, c.lang, got, c.expectedId)
 		}
