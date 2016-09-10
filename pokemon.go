@@ -5,10 +5,12 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"path/filepath"
 )
 
 func PokemonName(id int, lang string) string {
-	file, e := ioutil.ReadFile("./data/" + lang + ".json")
+	path, _ := filepath.Abs("./data/" + lang + ".json")
+	file, e := ioutil.ReadFile(path)
 	if e != nil {
 		fmt.Printf("File error: %v\n", e)
 		os.Exit(1)
@@ -20,7 +22,8 @@ func PokemonName(id int, lang string) string {
 }
 
 func PokemonId(name string, lang string) int {
-	file, e := ioutil.ReadFile("./data/" + lang + ".json")
+	path, _ := filepath.Abs("./data/" + lang + ".json")
+	file, e := ioutil.ReadFile(path)
 	if e != nil {
 		fmt.Printf("File error: %v\n", e)
 		os.Exit(1)
