@@ -1,41 +1,40 @@
-package main
+package pokemon
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"fmt"
+	"io/ioutil"
 	"os"
 )
 
-
-func PokemonName(id int, lang string) string{
+func PokemonName(id int, lang string) string {
 	file, e := ioutil.ReadFile("./data/" + lang + ".json")
 	if e != nil {
-        fmt.Printf("File error: %v\n", e)
-        os.Exit(1)
-    }
-    var pokemons []string
-    json.Unmarshal(file, &pokemons)
+		fmt.Printf("File error: %v\n", e)
+		os.Exit(1)
+	}
+	var pokemons []string
+	json.Unmarshal(file, &pokemons)
 
-	return pokemons[id - 1]
+	return pokemons[id-1]
 }
 
-func PokemonId(name string, lang string) int{
+func PokemonId(name string, lang string) int {
 	file, e := ioutil.ReadFile("./data/" + lang + ".json")
 	if e != nil {
-        fmt.Printf("File error: %v\n", e)
-        os.Exit(1)
-    }
-    var pokemons []string
-    json.Unmarshal(file, &pokemons)
+		fmt.Printf("File error: %v\n", e)
+		os.Exit(1)
+	}
+	var pokemons []string
+	json.Unmarshal(file, &pokemons)
 
-    var pokemonId int
+	var pokemonId int
 
-    for i := 0; i < len(pokemons); i++ {
-        if pokemons[i] == name {
-            pokemonId = i + 1
-        }
- 	}
+	for i := 0; i < len(pokemons); i++ {
+		if pokemons[i] == name {
+			pokemonId = i + 1
+		}
+	}
 
 	return pokemonId
 }

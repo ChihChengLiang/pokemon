@@ -1,11 +1,11 @@
-package main
+package pokemon
 
 import "testing"
 
 func TestNames(t *testing.T) {
 	cases := []struct {
-		id 			int 
-		lang, expectedName	string
+		id                 int
+		lang, expectedName string
 	}{
 		{1, "en", "Bulbasaur"},
 		{400, "en", "Bibarel"},
@@ -24,8 +24,8 @@ func TestNames(t *testing.T) {
 
 func TestIds(t *testing.T) {
 	cases := []struct {
-		expectedId 	int 
-		lang, name	string
+		expectedID int
+		lang, name string
 	}{
 		{1, "en", "Bulbasaur"},
 		{400, "en", "Bibarel"},
@@ -36,8 +36,8 @@ func TestIds(t *testing.T) {
 	}
 	for _, c := range cases {
 		got := PokemonId(c.name, c.lang)
-		if got != c.expectedId {
-			t.Errorf("getId(%q, %q) == %v, expectedId: %v", c.name, c.lang, got, c.expectedId)
+		if got != c.expectedID {
+			t.Errorf("getId(%q, %q) == %v, expectedID: %v", c.name, c.lang, got, c.expectedID)
 		}
 	}
 }
