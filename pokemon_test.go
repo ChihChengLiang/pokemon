@@ -10,9 +10,9 @@ func TestNames(t *testing.T) {
 		{1, "en", "Bulbasaur"},
 		{400, "en", "Bibarel"},
 		{721, "en", "Volcanion"},
-		{1, "zh-Hant", "妙蛙種子"},
-		{400, "zh-Hant", "大尾狸"},
-		{721, "zh-Hant", "波爾凱尼恩"},
+		{1, "zh-hant", "妙蛙種子"},
+		{400, "zh-hant", "大尾狸"},
+		{721, "zh-hant", "波爾凱尼恩"},
 	}
 	for _, c := range cases {
 		got := PokemonName(c.id, c.lang)
@@ -30,9 +30,9 @@ func TestIds(t *testing.T) {
 		{1, "en", "Bulbasaur"},
 		{400, "en", "Bibarel"},
 		{721, "en", "Volcanion"},
-		{1, "zh-Hant", "妙蛙種子"},
-		{400, "zh-Hant", "大尾狸"},
-		{721, "zh-Hant", "波爾凱尼恩"},
+		{1, "zh-hant", "妙蛙種子"},
+		{400, "zh-hant", "大尾狸"},
+		{721, "zh-hant", "波爾凱尼恩"},
 	}
 	for _, c := range cases {
 		got := PokemonId(c.name, c.lang)
