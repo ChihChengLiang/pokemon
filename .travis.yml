@@ -1,8 +1,4 @@
 language: go
 
 go:
-    - 1.6
-    - tip
-
-env:
-    - TRAVIS_BUILD_DIR=$HOME/ChihChengLiang/pokemon
+    - 1.6.3
