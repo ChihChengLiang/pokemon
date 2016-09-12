@@ -2,7 +2,4 @@ language: go
 
 go:
     - 1.6
-env:
-    - TRAVIS_BUILD_DIR=$HOME/ChihChengLiang/pokemon
-script:
-    - go test
+    - tip
